@@ -20,6 +20,7 @@
 		D593523D1DA838F70040F43B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D59352341DA838F70040F43B /* OscReceivedElements.cpp */; };
 		D593523E1DA838F70040F43B /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D59352361DA838F70040F43B /* OscTypes.cpp */; };
 		D59352461DA83FB30040F43B /* OSCController.mm in Sources */ = {isa = PBXBuildFile; fileRef = D59352441DA83FB30040F43B /* OSCController.mm */; };
+		D5C9A7CD1DA8471B0094FB2E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C9A7CC1DA8471B0094FB2E /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D59352441DA83FB30040F43B /* OSCController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OSCController.mm; sourceTree = "<group>"; };
 		D59352451DA83FB30040F43B /* OSCController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCController.h; sourceTree = "<group>"; };
 		D59352471DA83FDB0040F43B /* oscope-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oscope-Bridging-Header.h"; sourceTree = "<group>"; };
+		D5C9A7CC1DA8471B0094FB2E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5C9A7CD1DA8471B0094FB2E /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +74,7 @@
 			children = (
 				D593520E1DA838D90040F43B /* oscope */,
 				D593520D1DA838D90040F43B /* Products */,
+				D5C9A7CB1DA8471B0094FB2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,10 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				D593520F1DA838D90040F43B /* AppDelegate.swift */,
-				D59352471DA83FDB0040F43B /* oscope-Bridging-Header.h */,
-				D59352441DA83FB30040F43B /* OSCController.mm */,
-				D59352451DA83FB30040F43B /* OSCController.h */,
 				D59352111DA838D90040F43B /* ViewController.swift */,
+				D59352471DA83FDB0040F43B /* oscope-Bridging-Header.h */,
+				D59352451DA83FB30040F43B /* OSCController.h */,
+				D59352441DA83FB30040F43B /* OSCController.mm */,
 				D593523F1DA838FC0040F43B /* OSC */,
 				D59352131DA838D90040F43B /* Main.storyboard */,
 				D59352161DA838D90040F43B /* Assets.xcassets */,
@@ -150,6 +154,14 @@
 			name = OSC;
 			sourceTree = "<group>";
 		};
+		D5C9A7CB1DA8471B0094FB2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5C9A7CC1DA8471B0094FB2E /* CoreMotion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +194,7 @@
 				TargetAttributes = {
 					D593520B1DA838D90040F43B = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 78C98TD784;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -355,8 +368,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				DEVELOPMENT_TEAM = 78C98TD784;
 				HEADER_SEARCH_PATHS = oscope/;
 				INFOPLIST_FILE = oscope/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robbykraft.oscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,8 +385,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				DEVELOPMENT_TEAM = 78C98TD784;
 				HEADER_SEARCH_PATHS = oscope/;
 				INFOPLIST_FILE = oscope/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robbykraft.oscope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,6 +416,7 @@
 				D59352201DA838D90040F43B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

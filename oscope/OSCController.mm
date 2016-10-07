@@ -4,6 +4,7 @@
 #include "UdpSocket.h"
 
 #define ADDRESS "127.0.0.1"
+//#define ADDRESS "10.80.159.156"
 //#define ADDRESS "169.254.186.226"
 #define PORT 8000
 
@@ -15,6 +16,21 @@
 	self = [super init];
 	return self;
 }
+
+-(void) sendPitch:(float) pitch Roll:(float)roll Yaw:(float)yaw{
+	char buffer[OUTPUT_BUFFER_SIZE];
+	osc::OutboundPacketStream p( buffer, OUTPUT_BUFFER_SIZE );
+	UdpTransmitSocket transmitSocket( IpEndpointName( ADDRESS, PORT ) );
+
+	//    float one = msg[0] + msg[1];
+	p << osc::BeginBundleImmediate << osc::BeginMessage( "/orientation/1/pitch" ) << pitch << osc::EndMessage
+	<< osc::BeginMessage( "/orientation/1/roll" ) << roll << osc::EndMessage
+	<< osc::BeginMessage( "/orientation/1/yaw" ) << yaw << osc::EndMessage
+	<< osc::EndBundle;
+	transmitSocket.Send( p.Data(), p.Size() );
+//	printf("sending: %f, %f ,%f\n", pitch, roll, yaw);
+}
+
 
 -(void) send{
 	char buffer[OUTPUT_BUFFER_SIZE];
@@ -31,8 +47,6 @@
 	<< osc::BeginMessage( "/orientation/1/yaw" ) << yaw << osc::EndMessage
 	<< osc::EndBundle;
 	transmitSocket.Send( p.Data(), p.Size() );
-	
 }
-
 
 @end

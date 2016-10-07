@@ -4,6 +4,6 @@
 @interface OSCController : NSObject
 
 -(id) init;
--(void) send;
+-(void) sendPitch:(float) pitch Roll:(float)roll Yaw:(float)yaw;
 
 @end
