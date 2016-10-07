@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
+	let osc:OSCController = OSCController()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		let gesture:UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(touchHandler))
+		self.view.addGestureRecognizer(gesture)
+		gesture.delegate = self
+	}
+	
+	func touchHandler() {
+		osc.send()
 	}
 
 	override func didReceiveMemoryWarning() {
